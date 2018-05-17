@@ -9,14 +9,14 @@ import telebot
 import logging
 
 
-API_TOKEN = '594169097:AAEShVeDaukF2lx37P5i3rRSB5mUjJ-w4v4'
+API_TOKEN = '94169097:AAEShVeDaukF2lx37P5i3rRSB5mUjJ-w4v4'
 
-WEBHOOK_HOST = '82.200.130.16'
+WEBHOOK_HOST = 'https://mysterious-lowlands-31737.herokuapp.com'
 WEBHOOK_PORT = 443  # 443, 80, 88 or 8443 (port need to be 'open')
 WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
 
-WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate
-WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
+#WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate
+#WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
 
 # Quick'n'dirty SSL certificate generation:
 #
@@ -70,8 +70,7 @@ def echo_message(message):
 bot.remove_webhook()
 
 # Set webhook
-bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH,
-                certificate=open(WEBHOOK_SSL_CERT, 'r'))
+bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
 # Disable CherryPy requests log
 access_log = cherrypy.log.access_log
@@ -82,9 +81,7 @@ for handler in tuple(access_log.handlers):
 cherrypy.config.update({
     'server.socket_host': WEBHOOK_LISTEN,
     'server.socket_port': WEBHOOK_PORT,
-    'server.ssl_module': 'builtin',
-    'server.ssl_certificate': WEBHOOK_SSL_CERT,
-    'server.ssl_private_key': WEBHOOK_SSL_PRIV
+    'server.ssl_module': 'builtin'
 })
 
 cherrypy.quickstart(WebhookServer(), WEBHOOK_URL_PATH, {'/': {}})
