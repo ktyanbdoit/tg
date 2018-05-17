@@ -1,1 +1,1 @@
-web: gunicorn test.py --log-file=-
+web: gunicorn test
