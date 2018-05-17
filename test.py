@@ -55,6 +55,8 @@ class WebhookServer(object):
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
+    log('csdvsdvs')
+    print('vrfvsefrv')
     bot.reply_to(message,
                  ("Hi there, I am EchoBot.\n"
                   "I am here to echo your kind words back to you."))
