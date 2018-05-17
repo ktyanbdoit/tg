@@ -69,8 +69,8 @@ def echo_message(message):
 
 
 # Remove webhook, it fails sometimes the set if there is a previous webhook
-bot.remove_webhook()
-sleep(1)
+#bot.remove_webhook()
+
 # Set webhook
 bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
