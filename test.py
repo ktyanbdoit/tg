@@ -26,7 +26,7 @@ WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
 # When asked for "Common Name (e.g. server FQDN or YOUR name)" you should reply
 # with the same value in you put in WEBHOOK_HOST
 
-WEBHOOK_URL_BASE = "https://%s:%s" % (WEBHOOK_HOST)
+WEBHOOK_URL_BASE = "https://%s" % (WEBHOOK_HOST)
 WEBHOOK_URL_PATH = "/%s/" % (API_TOKEN)
 
 
