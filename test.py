@@ -9,7 +9,7 @@ import telebot
 import logging
 
 
-API_TOKEN = '594169097:AAEShVeDaukF2lx37P5i3rRSB5mUjJ-w4v4'
+API_TOKEN = '511645997:AAGh4Ufq4NIN21Vq0vuaqJJMenw_Amt9uyg'
 
 WEBHOOK_HOST = 'mysterious-lowlands-31737.herokuapp.com'
 WEBHOOK_PORT = 443  # 443, 80, 88 or 8443 (port need to be 'open')
