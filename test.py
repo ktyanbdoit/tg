@@ -11,7 +11,7 @@ import logging
 
 API_TOKEN = '594169097:AAEShVeDaukF2lx37P5i3rRSB5mUjJ-w4v4'
 
-WEBHOOK_HOST = 'https://mysterious-lowlands-31737.herokuapp.com'
+WEBHOOK_HOST = 'mysterious-lowlands-31737.herokuapp.com'
 WEBHOOK_PORT = 443  # 443, 80, 88 or 8443 (port need to be 'open')
 WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
 
@@ -55,8 +55,6 @@ class WebhookServer(object):
 # Handle '/start' and '/help'
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
-    log('csdvsdvs')
-    print('vrfvsefrv')
     bot.reply_to(message,
                  ("Hi there, I am EchoBot.\n"
                   "I am here to echo your kind words back to you."))
